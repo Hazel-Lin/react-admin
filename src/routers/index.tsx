@@ -2,16 +2,7 @@ import { Navigate, useRoutes } from 'react-router-dom'
 import type { RouteObject } from '@/routers/interface'
 import Login from '@/views/login/index'
 
-// * 导入所有router
-const metaRouters = import.meta.glob('./modules/*.tsx')
-
-// * 处理路由
-export const routerArray: RouteObject[] = []
-Object.keys(metaRouters).forEach((item) => {
-  Object.keys(metaRouters[item]).forEach((key: any) => {
-    routerArray.push(...metaRouters[item][key])
-  })
-})
+// 获取所有模块的路由
 
 export const rootRouter: RouteObject[] = [
   {
@@ -27,7 +18,6 @@ export const rootRouter: RouteObject[] = [
       key: 'login',
     },
   },
-  ...routerArray,
   {
     path: '*',
     element: <Navigate to="/404" />,
