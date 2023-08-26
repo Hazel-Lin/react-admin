@@ -1,9 +1,10 @@
 import type { RouteObject } from '@/routers/interface'
 import Home from '@/views/home/index'
+import Layout from '@/layout/index'
 
 const homeRouter: RouteObject[] = [
   {
-    element: <Home />,
+    element: <Layout />,
     path: '/home/index',
     children: [
       {
