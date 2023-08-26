@@ -1,4 +1,5 @@
 import { Navigate, useRoutes } from 'react-router-dom'
+import dynamicRoute from './dynamicRoute'
 import type { RouteObject } from '@/routers/interface'
 import Login from '@/views/login/index'
 
@@ -22,6 +23,7 @@ export const rootRouter: RouteObject[] = [
     path: '*',
     element: <Navigate to="/404" />,
   },
+  ...dynamicRoute,
 ]
 
 function Router() {
