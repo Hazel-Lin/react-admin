@@ -1,8 +1,8 @@
+import { connect } from 'react-redux'
 import logo from '@/assets/images/logo.png'
 
 function Logo(props: any) {
   const { isCollapse } = props
-
   return (
 		<div className="logo-box">
 			<img src={logo} alt="logo" className="logo-img" />
@@ -11,4 +11,9 @@ function Logo(props: any) {
   )
 }
 
-export default Logo
+function mapStateToProps(state: any) {
+  return {
+    isCollapse: state.isCollapse,
+  }
+}
+export default connect(mapStateToProps)(Logo)
